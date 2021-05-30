@@ -9,12 +9,11 @@ func main() {
 
 	fmt.Scan(&year)
 
-	switch {
-	case year % 400 == 0: 
+	isLeap := (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
+
+	if isLeap {
 		fmt.Println("YES")
-	case year % 4 == 0 && year % 100 != 0: 
-		fmt.Println("YES")
-	default: 
+	} else {
 		fmt.Println("NO")
 	}
 }
